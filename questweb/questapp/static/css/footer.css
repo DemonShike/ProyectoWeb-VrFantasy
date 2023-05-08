@@ -1,0 +1,63 @@
+/* Footer */
+
+
+.footer{
+    background-color: #232629;
+    padding: 40px 0;
+    color: white;
+}
+
+.footer_main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    max-width:1200px;
+}
+
+.text__container{
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    max-width: 30%;
+    line-height: 2em;
+}
+
+.text__container p{
+    margin-left: 40px;
+}
+
+.text_container{
+    margin-left: 83px;
+    
+}
+.text_list{
+    padding: 0;
+    list-style: none;
+    
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+
+}
+
+.text_list li a{
+    color: white;
+    text-decoration: none;
+}
+
+.text_list li a:hover{color: #777;}
+
+.text_list li{
+    
+    margin: 16px 0;
+}
+
+.text_title{
+    font-family: 'Radio2';
+}
+
+.text__container .img-content{
+    margin: 0;
+}

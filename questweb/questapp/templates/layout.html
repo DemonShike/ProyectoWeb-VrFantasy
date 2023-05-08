@@ -1,0 +1,56 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>navegation var</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'css/layout.css' %}" rel="stylesheet">
+    {% block styles %}
+
+    {% endblock styles %}
+    
+</head>
+
+<body>
+    <main class="{% block content_container %}hero {% endblock %}">
+        
+        <header>
+            <nav>
+                <div class="box-nav">
+                    <div class="img-content">
+                        <img class="logo-Nav" alt="logo vrfantasy" src="{% static 'images/unknown.png' %}">
+                    </div>
+                    <ul class="boxItems">
+                        <li class="itemNav home"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="itemNav about"><a href="{% url 'about_us' %}">About us</a></li>
+                        <li class="itemNav products"><a href="{% url 'products' %}">Products</a></li>
+                        <li class="itemNav products"><a href="{% url 'form' %}">Formulario</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+      {% block content %}
+      
+      {% endblock content %}
+    </main>
+    {% block content2 %}
+
+    {% endblock content2 %}
+    <footer class="footer">
+        {% include 'footer.html' %}
+    </footer>
+
+<script type="text/javascript" defer src="{% static './scripts/barra.js' %}" >
+
+</script>
+{% block script %}
+
+{% endblock  %}
+</body>
+
+</html>

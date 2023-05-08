@@ -1,0 +1,70 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+
+    <link rel="stylesheet" href="{% static './css/products/basicos.css' %}">
+    <link rel="stylesheet" href="{% static './css/products/tarjetas.css' %}">
+    <link rel="stylesheet" href="{% static './css/products/grilla.css' %}">
+    {% endblock styles %}
+
+
+{% block content_container %}hero-products{% endblock %}
+{% block content %}
+
+{% if messages%} <!--Esto recibe mensajes flash-->
+    {% for message in messages %} 
+        <div class="message">
+            {{message}} 
+        </div>    
+    {% endfor %}
+
+{% endif %}
+
+<h2 class="titleProducts">Products</h2>
+<div class="contentProducts">
+    
+    <div class="containercenter">
+        {% for articulo in articulos %}
+        <a class="link-products" href="{% url 'products_detailed' articulo.id %}">
+            <div class="producto">
+                {% if articulo.image_product.url|length >= 1 and  articulo.image_product != 'null' %}
+                    <img src="{{articulo.image_product.url}}" alt="{{articulo.name_products}}">
+                {% else %}
+                    <img src="{% static './images/auriculares.png' %}" alt="{{articulo.name_products}}">
+                {% endif %}
+
+                <div class="informacion">
+                    <span class="tipo-envio">
+                        {% if articulo.shipping_type %}
+                            Envio Disponible
+                        {% else %}
+                            Envio No Disponible
+                        {% endif %}</span>
+                    <span class="precio">$ {{articulo.product_price}}</span>
+                    <span class="precio-envio">
+                        {% if articulo.shipping_price %}
+                            Envio Gratis
+                        {% else %}
+                            Envio con Costo
+                        {% endif %}
+                    </span>
+                    <span class="descripcion">{{articulo.name_products}}</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">{{articulo.product_city}}</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% block script %}
+<script defer src="{% static './scripts/friconix.js' %}"> </script>
+{% endblock script %}

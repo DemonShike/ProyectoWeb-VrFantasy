@@ -1,0 +1,34 @@
+{% load static %}
+{% block styles %}
+    <link type="text/css" href="{% static 'css/footer.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+<div class="footer_main">
+    
+    <div class="footer_container">
+        <div class="text__container">
+            <div class="img-content">
+                <img class="logo-Nav" alt="logo vrfantasy" src="{% static 'images/unknown.png' %}">
+            </div>
+            <p><b>VRfantasy</b> it's a Fake Website  <br>Gabriel Martinez &copy;</p>
+        </div>
+        <div class="text_container">
+            <h2 class="text_title">More Links</h2>
+            <ul class="text_list">
+                
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Manage Cookies</a></li>
+            </ul>
+        </div>
+        <div class="text_container">
+            <h2 class="text_title">Community Links</h2>
+            <ul class="text_list">
+                
+                <li><a href="#">Discord</a></li>
+                <li><a href="#">Reddit</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

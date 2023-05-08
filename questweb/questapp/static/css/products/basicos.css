@@ -1,0 +1,62 @@
+/* Fuentes */
+
+@font-face {
+    font-family: 'Radio';
+    src: url('../media/fonts/PPRadioGrotesk-Black.otf');
+}
+
+@font-face {
+    font-family: 'Radio2';
+    src: url('../media/fonts/PPRadioGrotesk-BlackItalic.otf');
+}
+
+@font-face {
+    font-family: 'Radio3';
+    src: url('../media/fonts/PPRadioGrotesk-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Radio4';
+    src: url('../media/fonts/PPRadioGrotesk-RegularItalic.otf');
+}
+
+@font-face {
+    font-family: 'Radio5';
+    src: url('../media/fonts/PPRadioGrotesk-Ultralight.otf');
+}
+
+@font-face {
+    font-family: 'Radio6';
+    src: url('../static/media/fonts/PPRadioGrotesk-UltralightItalic.otf');
+}
+.titleProducts{
+    margin-top: 160px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Radio3',sans-serif,Arial, Helvetica, sans-serif;
+    font-size: 3em;
+}
+
+.contentProducts{
+
+    padding: 1em;
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-color: #232629;
+    
+    width: 64%;
+    overflow-y: scroll;
+    max-height: 600px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    min-width: 910px;
+}
+
+.containercenter{
+  
+    display: flex;
+ 
+
+    flex-wrap: wrap;
+    margin: 0 auto;
+}

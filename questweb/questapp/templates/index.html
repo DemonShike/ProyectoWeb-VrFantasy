@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+ <link type="text/css" href="{% static 'css/hero.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+
+
+
+{% block content %}
+<div class="heroConteiner">
+
+
+    <div class="heroText">
+
+        <h2 class="titleHero">Vr is now
+
+            available for you</h2>
+
+
+        <button class="buttonHero">More +</button>
+
+    </div>
+
+
+</div>
+<div class="conteinerDown">
+    <a href="#buttonMoreSold"><img class="downButton" src="{% static 'images/icons8-slide-up-100.png' %}" alt="button"></a>
+</div>
+{% endblock content %}
+{% block content2 %}
+<section class="oculus2">
+    <h2 class="title" id="buttonMoreSold">More Sold</h2>
+    <div class="quest2Conteiner">
+        <div class="imgQuest2">
+
+            <img src="{% static 'images/dfqs58t-d6278ef5-a9ac-4db7-bed9-94d1417903f2.png' %}" alt="oculus quest2">
+        </div>
+        <div class="textoculus2">
+            <h3>The new model <span class="colorRose">Oculus Quest 2</span>!!</h3>
+            <p> The new model <span class="colorRose">Oculus Quest 2</span> is the best experience if you talk about
+                immersion<br /><br />"An improved version of the original Oculus Quest with many upgrades and at a
+                price you can't afford to miss."</p>
+        </div>
+    </div>
+</section>
+<section class="moreSold">
+    <h3 class="title">More Sold Products</h3>
+    <div class="contentProducts">
+        <div class="containerVr hover--black">
+            <h4 class="titlequest">Oculus Quest</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id recusandae, tenetur magnam quo itaque
+                vero quam. Molestiae eius numquam soluta reiciendis quae? Mollitia culpa asperiores laboriosam in
+                possimus excepturi blanditiis.</p>
+            <button class="buttonHero button--black">More</button>
+        </div>
+        <div class="containerVr hover--black">
+            <h4 class="titlequest">Oculus Quest 2</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id recusandae, tenetur magnam quo itaque
+                vero quam. Molestiae eius numquam soluta reiciendis quae? Mollitia culpa asperiores laboriosam in
+                possimus excepturi blanditiis.</p>
+            <button class="buttonHero button--black">More</button>
+        </div>
+        <div class="containerVr hover--black">
+            <h4 class="titlequest ">Htc vive</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reiciendis expedita dignissimos,
+                eveniet rem pariatur inventore maiores, aperiam sit, quaerat voluptate sequi minus error molestiae
+                quod atque tempore laudantium ad.</p>
+            <button class="buttonHero button--black">More</button>
+        </div>
+    </div>
+</section>
+
+{% endblock content2 %}

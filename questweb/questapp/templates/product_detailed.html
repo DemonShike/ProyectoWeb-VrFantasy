@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="{% static './css/products_detailed.css' %}">
+{% endblock styles %}
+
+
+{% block content_container %}hero-products-detailed{% endblock %}
+
+{% block content %}
+<div class="containerTop">
+<div class="product-box">
+    <div class="white-color">
+        <div class="box-img">
+            <div class="image-box">
+                <img id="imageBox" src="{% static 'images/oculus-quest-2-stock1-5ddfd36d2e54fff24516491840125037-640-0.jpg' %}">
+            </div>
+            <div class="small-img">
+                <img src="{% static 'images/diferencias_entre_RV_RA_o_mixta_1100x564-transformed.jpeg' %}" onclick="myFuction(this)">
+                <img src="{% static 'images/oculus-quest-2-stock1-5ddfd36d2e54fff24516491840125037-640-0.jpg' %}" onclick="myFuction(this)">
+
+            </div>
+        </div> 
+    </div>
+    {% for articulos in articulo %}{% endfor %}
+    <div class="white-color-two">
+        <div class="text-box">
+            <h4 class="tag-products"><a href="{%url 'index' %}">Home > </a> <a href="{%url 'products' %}">Products ></a>  <a href="{%url 'products_detailed' 3 %}">{{articulos.name_products}}</a></h4>
+            <h2 class="title-product">{{articulos.name_products}}</h2>
+            <h3 class="price">Precio: US${{articulos.product_price}}</h3>
+            <div class="box one">
+                <span>{% if articulos.shipping_price %}
+                        Envio con Costo
+                        {% else %}
+                        Envio Gratis
+                    {% endif %}
+                    </span>
+                <span>{% if articulos.shipping_price %}
+                    Envio No Disponible
+                    {% else %}
+                    Envio Disponible
+                {% endif %}</span>
+                <span>{{articulos.product_city}}</span>
+            </div>
+            <div class="box two">
+                <span>Id Producto: {{articulos.id}}</span>
+                <span>Stock: True False</span> <!--AGREGAR CUANDO AGREGE IMAGEN-->
+
+            </div>
+            <div class="box-cards">
+            <span class="cards-text">Tarjetas Aceptadas:</span>
+            <img src="{% static 'images/tarjeas_sin.jpg' %}">
+            </div>
+            <button class="btn-buy">Comprar<span class="material-symbols-outlined">
+                add_shopping_cart
+                </span></button>
+        </div>
+    </div>
+    <div class="text-box-two">
+        <h2>Descripcion</h2>
+        <ul>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+            <li>Soy un texto de relleno mas corto que un lorem</li>
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock  %}
+
+{% block script %}
+<script type="text/javascript" defer src="{% static './scripts/products.js' %}" >
+
+</script>
+{% endblock script %}

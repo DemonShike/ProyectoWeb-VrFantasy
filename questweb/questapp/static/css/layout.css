@@ -1,0 +1,168 @@
+/* Colors */
+
+:root{
+    --primary:rgba(0,0,0,0.1);
+}
+
+/* Fuentes */
+
+@font-face {
+    font-family: 'Radio';
+    src: url('../media/fonts/PPRadioGrotesk-Black.otf');
+}
+
+@font-face {
+    font-family: 'Radio2';
+    src: url('../media/fonts/PPRadioGrotesk-BlackItalic.otf');
+}
+
+@font-face {
+    font-family: 'Radio3';
+    src: url('../media/fonts/PPRadioGrotesk-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Radio4';
+    src: url('../media/fonts/PPRadioGrotesk-RegularItalic.otf');
+}
+
+@font-face {
+    font-family: 'Radio5';
+    src: url('../media/fonts/PPRadioGrotesk-Ultralight.otf');
+}
+
+@font-face {
+    font-family: 'Radio6';
+    src: url('../static/media/fonts/PPRadioGrotesk-UltralightItalic.otf');
+}
+
+
+body{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;  
+}
+
+.hero{
+    background-image: url('../images/1_vr.png');
+    overflow: hidden;
+    background-size: cover ;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+nav{
+    position: absolute;
+
+}
+.box-nav{
+    z-index: 1;
+    top: 40px;
+    position: fixed;
+    width: 80%;
+    left: 10%;
+    
+    border: 1px solid #999;
+
+    display: flex;
+    justify-content:  start;
+    border-radius: 50px;
+    background-color: #fffbf4;
+    transition: all 300ms;
+}
+
+.box-nav.abajo{
+    z-index: 1;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    
+    border: 1px solid #999;
+
+    display: flex;
+    justify-content:  start;
+    border-radius: 0px;
+    transition: all 300ms;
+}
+
+.itemNav{
+    font-family: 'Radio5',Arial, Helvetica, sans-serif;
+}
+.boxItems{
+    padding: 0;
+    margin: 0;
+    width: 55.125em;
+    list-style: none;    
+    display: flex;
+    align-items: center;
+    justify-content:  end;
+}
+
+.boxItems li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+
+.boxItems li{
+    
+    font-size: 1.2em;
+    padding: 0 20px;
+}
+
+/*-----------------------*/
+
+.boxItems li a{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+ 
+}
+
+.boxItems li a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid black;
+    transform: translateX(0%);
+    transition: all 0.9s ease;
+    
+}
+
+
+
+.boxItems li a:hover:after{
+    width: 100%;
+}
+
+/*--------------------*/
+
+
+.img-content{
+    margin-left: 30px;
+    height: 70px;
+}
+
+.img-content img{
+    height: 100%;
+}
+
+
+
+/*
+
+.contentProducts{
+    margin-top: 600px;
+}
+
+*/
+

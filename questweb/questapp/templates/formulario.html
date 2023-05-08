@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="heroConteiner">
+    <div class="heroText">
+        <h1>Formulario<h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{form}}
+            
+            <input type="submit" value="Guardar"/>
+        </form>
+    </div>
+</div>
+{% endblock content %}

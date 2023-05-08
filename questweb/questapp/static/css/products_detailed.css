@@ -1,0 +1,231 @@
+.containerTop{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 160px;
+
+
+}
+
+.hero-products-detailed{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    overflow: hidden;
+    background-size: cover ;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.product-box{
+    padding: 20px 0;
+
+
+   
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+/*Image*/
+.box-img{
+    padding: 20px;
+    background-color: #fcfafb;
+   
+    border-left: 1px solid rgb(215, 215, 216);
+    border-right: 1px solid rgb(215, 215, 216);
+
+}
+
+.image-box{
+    background-color: #fcfafb;
+
+    padding: 7px 7px 7px 7px;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    height: 400px;
+    width: 96%;
+    
+    overflow: hidden;
+    border-radius: 2px;
+   
+
+
+}
+
+.image-box img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+
+}
+
+.small-img{
+    width: 80px;
+    display: flex;
+    
+}
+
+.small-img img{
+    border-radius: 2px;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 8px;
+    margin: 10px 10px 15px;
+    cursor: pointer;
+}
+
+/* text box*/
+
+.tag-products *{
+    text-decoration: none;
+    color: rgb(36, 35, 35);
+    font-family: 'Radio5';
+    font-size: 1.1em;
+}
+.tag-products a:last-child{
+    text-transform: uppercase;
+}
+.text-box{
+    margin:  0 10px;
+    
+    min-width: 420px;
+    border-right: 1px solid rgb(215, 215, 216);
+    border-left: 1px solid rgb(215, 215, 216);
+    padding: 0 17px;
+    
+
+    background-color: #fcfafb;
+}
+
+
+
+.title-product{
+    padding-left: 4px;
+    font-size: 2.3em  ;
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.price{
+    text-align: center;
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+    background-color: #00cf61;
+    margin: 36px 0;
+
+}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box span{
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-top: 5px ;
+    margin-bottom: 18px;
+    color: white;
+    font-family: 'Radio2',Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+}
+
+
+.one span:nth-child(1){
+    background-color: #c355c0;
+}
+.one span:nth-child(2){
+    background-color: #f060aa;
+}
+.one span:nth-child(3){
+    background-color: #ff8aa6;
+}
+
+
+.two span:nth-child(1){
+    background-color: #ffbaab;
+}
+
+.two span:nth-child(2){
+    background-color: #ffdbab;
+}
+
+
+.box-cards{
+
+    margin: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+ 
+    
+}
+
+.cards-text{
+    font-size: 1.2em;
+    padding: 0 5px;
+    font-family: 'Radio2',Arial, Helvetica, sans-serif;
+}
+
+
+.text-box-two{
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.521) ;
+    background-color: #fcfafb;
+    border-radius: 4px;
+    
+    border-right: 1px solid rgb(215, 215, 216);
+    padding: 0 0.6em 0 0.6em;
+    width: 21%;
+}
+/*btn*/
+.btn-buy{
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Radio6',Arial, Helvetica, sans-serif;
+    background-color: #3483fa;
+    border: 1px solid #3483fa;
+    padding: 0 4px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 1.6em;
+    width: 400px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.btn-buy:hover{
+    background-color: #296dd4;
+    color: rgb(219, 219, 219);
+    cursor: pointer;
+}
+
+
+.material-symbols-outlined {
+padding-left: 8px;
+font-size: 30px;
+position: relative;
+top: 5px;
+}
+
+
+.white-color{
+    width: 27%;
+    min-width: 336px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.521) ;
+}
+.white-color,.white-color-two{
+    
+    border-radius: 4px;
+    background-color: white;
+    padding: 15px;
+}
+
+.white-color-two{
+    max-width: 670px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.521) ;
+    margin-left: 13px;
+    margin-right: 13px;
+    width: 48%;
+    min-width: 480px;
+}

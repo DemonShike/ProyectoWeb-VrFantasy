@@ -1,0 +1,261 @@
+.heroConteiner{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.heroText{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+   
+    border: 1px solid white;
+    border-radius: 2px;
+    align-items: end;
+    border-radius: 2px;
+    width: 60%;
+    
+    padding: 95px;
+    margin: 0 auto;
+    margin-top: 180px;
+    margin-bottom: 70px;
+
+}
+.titleHero{
+    text-transform: capitalize;
+    color: white;
+    margin: 0;
+    text-shadow: #d177d5 4px 3px;
+    font-family: 'Radio6',sans-serif,Arial, Helvetica, sans-serif;
+    font-size: 7vw; /*9em anterior*/
+    display: block;
+    
+}
+
+
+
+.buttonHero{
+    margin-top: 10px;
+    background-color: #fff;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    width: 11.7vw;
+    min-width: 140px;
+    min-height: 60;
+    height: 10vh;
+    border-radius: 80px;
+    border: 3px solid #ff0f8b;
+    color: #e82c7a;
+    
+}
+
+.buttonHero:hover{
+    margin-top: 10px;
+    background-color: #e82c7a;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    width: 11.7vw;
+    min-width: 140px;
+    min-height: 60;
+    height: 10vh;
+    border-radius: 80px;
+    border: 3px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.conteinerDown{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    
+    margin-bottom: 35px;
+    transition: all 300ms;
+    
+}
+.downButton{
+
+    width: 100%;
+    transform: rotate(180deg);
+    z-index: 2;
+}
+
+
+.conteinerDown:hover{
+    transition: all 300ms;
+    width: 90px;
+    height: 90px;
+
+}
+
+/* Section 2*/
+
+.title{
+    color: white;
+    text-align: center;
+    font-size: 7em;
+    font-family: 'Radio5';
+    margin: 0;
+    margin-bottom: 5px;
+    padding-top: 75px;
+    
+}
+.oculus2{
+    background-color: #1b1e20;
+    
+    
+}
+.quest2Conteiner{
+
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 170px;
+    padding-top: 30px;
+}
+
+.imgQuest2{
+    width: 60%;
+}
+
+.imgQuest2 img{
+    width: 100%;
+}
+.textoculus2{
+
+
+    color: #e7e7e7;
+    height: 100%;
+    min-width: 373px;
+    max-width: 40%;
+}
+
+.textoculus2 h3{
+
+    text-align: center;
+    font-family: 'Radio5';
+    text-transform: capitalize;
+    font-size: 2.5em;
+}
+
+.textoculus2 p{
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Radio3';
+    line-height: 1.4em;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.colorRose{
+    color:#ff0f8b;
+}
+
+
+/* Section 3 */
+.moreSold{
+   
+    background-color: rgb(30,30,30);
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+
+.moreSold h3{
+    padding-top: 2px;
+    margin-top: 0   ;
+    margin-bottom: 24px;
+}
+.contentProducts{
+    
+    display:  flex;
+    justify-content: center;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.containerVr{
+
+    margin: 20px;
+    
+    text-align: center;
+    border-radius: 15px;
+    padding: 50px 25px;
+    box-sizing: border-box;
+
+
+}
+.containerVr p, .containerVr h4{
+    color: white;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.containerVr:hover p, .containerVr:hover h4{
+   opacity: 1;
+   transition: all 300ms;
+ 
+}
+
+.containerVr p{
+    font-size: 1.25em;
+    margin-bottom: 80px;
+    font-family: 'Radio5',Arial, Helvetica, sans-serif;
+
+}
+.titlequest{
+
+    font-size: 1.8em;
+    margin-top: 0   ;
+    text-align: center;
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+}
+
+.containerVr:nth-child(n){
+    background-size: cover;
+    background-position: center center;
+    transition: --primary 900ms;
+}
+
+.containerVr:nth-child(1){
+    background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/41uxvP4KUZL._SL1000_.jpg);
+
+}
+
+
+
+.containerVr:nth-child(2){
+    background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/oculus-quest-2-mieten-get-it-easy.webp);
+
+}
+
+.containerVr:nth-child(3){
+    background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/6388754_rd.jpg);
+
+}
+.hover--black:hover{
+    
+    --primary:rgba(0,0,0,0.7);
+    transition: --primary 900ms;
+}
+
+.button--black{
+    color: black;
+    border-color: black;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.button--black:hover {
+    border-color: white;
+    background-color: black;
+    color: white;
+    transition: all 300ms;
+    
+}
