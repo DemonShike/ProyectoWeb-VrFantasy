@@ -15,14 +15,14 @@ def about_us(request):
 
 
 def products(request):
-    articulos = Article.objects.all()
-
+    articulos = Article.objects.filter(status = True).order_by('-created_at')
+    #posible forma ,crear una var que recorra todas las categorias,pasarla como variable al render, y en el html recorrerla para que muestre todas las categorias en forma de link para filtrar en otra view
     return render(request, 'products.html',{
         'articulos': articulos
     })
 
-def products_detailed(request, id):
-    articulos = Article.objects.get(pk=id)
+def products_detailed(request, slug):
+    articulos = Article.objects.get(slug=slug)
 
     return render(request, 'product_detailed.html',{
         'articulos': articulos

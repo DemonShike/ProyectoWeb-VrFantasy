@@ -12,6 +12,7 @@
     max-height: 406.42px;
     margin: 0.2em;
     overflow: hidden;
+    width: 280px;
 }
 .producto:hover{
     box-shadow: 0 0 1.5em rgba(255, 255, 255, 0.7);

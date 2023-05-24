@@ -23,10 +23,12 @@
 
 <h2 class="titleProducts">Products</h2>
 <div class="contentProducts">
+
+    <h2>hola</h2>
     
     <div class="containercenter">
         {% for articulo in articulos %}
-        <a class="link-products" href="{% url 'products_detailed' articulo.id %}">
+        <a class="link-products" href="{% url 'products_detailed' articulo.slug %}">
             <div class="producto">
                 {% if articulo.image_product.url|length >= 1 and  articulo.image_product != 'null' %}
                     <img src="{{articulo.image_product.url}}" alt="{{articulo.name_products}}">
