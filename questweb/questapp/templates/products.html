@@ -24,7 +24,10 @@
 <h2 class="titleProducts">Products</h2>
 <div class="contentProducts">
 
-    <h2>hola</h2>
+    {% for category in categories %} <!--Recibiendo categorias del Cprocessor-->
+        <h2>{{category.0}}</h2>
+    {% endfor %}
+    
     
     <div class="containercenter">
         {% for articulo in articulos %}
