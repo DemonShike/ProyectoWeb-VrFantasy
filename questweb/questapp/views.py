@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse,redirect
+from django.shortcuts import render, HttpResponse,redirect,get_object_or_404
 from questweb.forms import FormArticle
-from questapp.models import Article
+from questapp.models import Article,Category
 from django.contrib import messages
 
 # Create your views here.
@@ -64,4 +64,15 @@ def form(request): #Recibe los datos enviados de /formulario/
 
     return render(request, 'formulario.html',{
         'form' : formulario
+    })
+
+
+def categories(request, category_name):
+
+    category = get_object_or_404(Category ,name=category_name)
+    articulo = Article.objects.filter(categories = category)
+
+    return render(request, 'categories.html',{
+        'category':category,
+        'articulos':articulo
     })

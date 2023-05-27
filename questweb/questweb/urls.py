@@ -24,7 +24,8 @@ urlpatterns = [
     path('products/',views.products, name='products'),
     path('about-us/', views.about_us , name='about_us'),
     path('formulario/', views.form, name='form'),
-    path('formulario/<str:slug>', views.products_detailed, name='products_detailed')
+    path('formulario/<str:slug>', views.products_detailed, name='products_detailed'),
+    path('categories/<str:category_name>',views.categories, name='categories')
 ]
 
 # load images
