@@ -21,12 +21,17 @@
 
 {% endif %}
 
-<h2 class="titleProducts">{{category.name}}</h2>
+<h2 class="titleProducts">Category: {{category.name}}</h2>
 <div class="contentProducts">
 
-    {% for category in categories %} <!--Recibiendo categorias del Cprocessor-->
-        <h2>{{category.0}}</h2>
-    {% endfor %}
+    {% comment "creo que era una prueba" %}
+    
+        {% for category in categories %} <!--Recibiendo categorias del Cprocessor-->
+        <h2>{{category.1}}</h2>
+        {% endfor %}
+        
+        {% include 'expositor-productos.html' %}
+    {% endcomment %}
     
     {% include 'expositor-productos.html' %}
    

@@ -103,15 +103,45 @@ nav{
     text-decoration: none;
     color: black;
 
+    
+
 }
 
 
-.boxItems li{
+.boxItems > li{
     
     font-size: 1.2em;
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 
+.list-categories{
+    position: absolute;
+    opacity: 0;
+    list-style: none;
+    font-family: 'Radio5',Arial, Helvetica, sans-serif;
+    border: 1px solid #999;
+    border-top: 0px;
+    padding: 0;
+    border-bottom-left-radius: 3px;   
+    border-bottom-right-radius: 3px;   
+}
+
+.boxItems li:hover .list-categories{
+    background-color: #fffbf4;
+    transition: all 900ms;
+    opacity: 1;
+    margin-top: 4px;
+}
+
+.boxItems li:hover .list-categories li > a{
+    
+    padding: 5px 22px;
+    display: block;
+}
+
+.list-categories li > a:hover{
+    color: gray;
+}
 /*-----------------------*/
 
 .boxItems li a{
@@ -125,7 +155,7 @@ nav{
  
 }
 
-.boxItems li a:after{
+.boxItems >li >a:after{
     content: '';
     position: absolute;
     left: 0;

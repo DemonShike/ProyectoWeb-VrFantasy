@@ -22,28 +22,39 @@
                     <img id="imageBox" src="{% static './images/auriculares.png' %}" alt="{{articulo.name_products}}">
                 {% endif %}
             </div>
-            <div class="small-img">
-                {% if articulos.min_image_one.url|length >= 1 and  articulos.min_image_one != 'null' %}
-                    <img src="{{articulos.min_image_one.url}}" onclick="myFuction(this)">
-                {% else %}
-                    <img src="{% static './../media/image_products/not-available.jpg' %}" onclick="myFuction(this)">
-                {% endif %}
+            <div class="container-small-img">
+                <div class="small-img">
+                    {% if articulos.min_image_one.url|length >= 1 and  articulos.min_image_one != 'null' %}
+                        <img src="{{articulos.min_image_one.url}}" onclick="myFuction(this)">
+                    {% else %}
+                        <img src="{% static './../media/image_products/not-available.jpg' %}" onclick="myFuction(this)">
+                    {% endif %}
+                </div>
+                <div class="small-img">
+                    {% if articulos.min_image_two.url|length >= 1 and  articulos.min_image_two != 'null' %}
+                        <img src="{{articulos.min_image_two.url}}" onclick="myFuction(this)">
+                    {% else %}
+                        <img src="{% static './../media/image_products/not-available.jpg' %}" onclick="myFuction(this)">
+                    {% endif %}
+                </div>
+                <div class="small-img">
+                    {% if articulos.image_product.url|length >= 1 and  articulos.image_product != 'null' %}
+                        <img onclick="myFuction(this)" src="{{articulos.image_product.url}}" alt="{{articulos.name_products}}">
+                    {% else %}
+                        <img onclick="myFuction(this)" src="{% static './images/auriculares.png' %}" alt="{{articulo.name_products}}">
+                    {% endif %}
+                </div>
 
-                {% if articulos.min_image_two.url|length >= 1 and  articulos.min_image_two != 'null' %}
-                    <img src="{{articulos.min_image_two.url}}" onclick="myFuction(this)">
-                {% else %}
-                    <img src="{% static './../media/image_products/not-available.jpg' %}" onclick="myFuction(this)">
-                {% endif %}
-
+                
             </div>
         </div> 
     </div>
         <div class="white-color-two">
             <div class="text-box">
-                <h4 class="tag-products"><a href="{%url 'index' %}">Home > </a> <a href="{%url 'products' %}">Products ></a>  <a href="{%url 'products_detailed' 3 %}">{{articulos.name_products}}</a></h4>
+                <h4 class="tag-products"><a href="{%url 'index' %}">Home > </a> <a href="{%url 'products' %}">Products ></a>  <a href="#">{{articulos.name_products}}</a></h4>
                     <span class="span-categories">Etiquetas del Producto: </span>
                 {% for articulo in  articulos.categories.all%} <!--for categories-->
-                    <a href="#" class="categories">{{articulo}}</a>
+                    <a href="{% url 'categories' articulo.name %}" class="categories">{{articulo}}</a>
                 {% endfor %}
                 
                 <h2 class="title-product">{{articulos.name_products}}</h2>

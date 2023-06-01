@@ -30,11 +30,15 @@
     src: url('../static/media/fonts/PPRadioGrotesk-UltralightItalic.otf');
 }
 .titleProducts{
+    margin: 0 auto;
     margin-top: 160px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: center;
-    font-family: 'Radio3',sans-serif,Arial, Helvetica, sans-serif;
+    font-family: 'Radio5',sans-serif,Arial, Helvetica, sans-serif;
     font-size: 3em;
+    width: 64%;
+    color: whitesmoke;
+    
 }
 
 .contentProducts{

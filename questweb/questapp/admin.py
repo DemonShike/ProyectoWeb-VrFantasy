@@ -3,10 +3,15 @@ from .models import Article, Category
 
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
+    search_fields = ('name',)
 
 
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at','user','updated_at')
+    search_fields = ('name_products','description_products',)
+    list_filter = ('product_city','status','categories','user__username')
+    list_display = ('name_products','status','created_at')
+    ordering = ('created_at',)
 
     def save_model(self, request, obj, form, change): #esta funcion asigna al objeto creado,como usuario que lo creo,el que lo este creando en el admin panel
         if not obj.user_id:
