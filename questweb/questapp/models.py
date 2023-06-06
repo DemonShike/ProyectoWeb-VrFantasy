@@ -32,7 +32,7 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     product_price = models.DecimalField(max_digits=10, decimal_places=2)
-    status = models.BooleanField(default=False)
+    status = models.BooleanField(default=False, verbose_name='¿Public?')
     min_image_one =  models.ImageField(default='null', upload_to='image_products_min')
     min_image_two =  models.ImageField(default='null', upload_to='image_products_min')
     user = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE, editable=False, null=True)
@@ -42,7 +42,7 @@ class Article(models.Model):
 
     
     def save(self, *args, **kwargs):
-        if not self.slug:
+        if  self.slug == "none":
             base_slug = slugify(self.name_products)
             slug = base_slug
             counter = 1

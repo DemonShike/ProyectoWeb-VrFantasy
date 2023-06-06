@@ -1,1 +1,35 @@
-<h1>HOLAAAAAAAAAAAZ</h2>
+
+
+<div class="pagination">
+    <div class="bg_paginator">
+        {% if articulos.has_previous %}
+            <a  class="text_paginator" href="?page=1">&laquo; Primero</a>
+            <a  class="text_paginator" href="?page={{ articulos.previous_page_number}}"><i class="fa-solid fa-arrow-left"></i> Anterior</a>
+        {% endif %}
+
+        <span class="actual">
+            {% if  articulos.number > 1 %} <!--Esto corrobora que el numero sea superior 1 para siempre poder mostrar  3 numeros siguientes y 1 anterior por que si empezara en 1 no tendria sentido-->
+            
+                {% if articulos.paginator.num_pages > 2 %} <!--Esto corrobara la cantidad necesaria minima de paginas para hacer el codigo-->
+                    {% for article in articulos.paginator.page_range %} <!--Esto recorre la cantidad total de paginas -->
+                        {% if article >= articulos.number|add:-1 and article < articulos.number|add:3 %}<!--Cuando la variable iterada article sea igual o mayor al numero actual de la pagina restado 1 de valor y ademas esta misma sea menor a el numero actual de la pagina suma el numero 3 ,es una suma que no confunda el add,solo que + no se puede usar peria seria algo como "numero_actual + 3" -->
+                            <a class="number_pag" href="?page={{article}}">{{ article }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% else %}
+                {% for article in articulos.paginator.page_range %}
+                    {% if article < articulos.number|add:3 %}<!--Cuando la variable iterada article sea igual o mayor al numero actual de la pagina restado 1 de valor y ademas esta misma sea menor a el numero actual de la pagina suma el numero 3 ,es una suma que no confunda el add,solo que + no se puede usar peria seria algo como "numero_actual + 3" -->
+                        <a class="number_first" href="?page={{article}}">{{ article }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </span>
+
+        {% if articulos.has_next %}
+            <a class="text_paginator" href="?page={{ articulos.next_page_number}}">Siguiente <i class="fa-solid fa-arrow-right"></i> </a>
+            <a class="text_paginator" href="?page={{ articulos.paginator.num_pages}}"> Ultima &raquo;</a>
+        {% endif %}
+
+    </div>
+</div>

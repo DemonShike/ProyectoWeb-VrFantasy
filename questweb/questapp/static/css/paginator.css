@@ -1,0 +1,51 @@
+.pagination{
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 0 0 4px 4px;
+    background-color: #232629;
+    margin-bottom: 50px;
+    
+    width: 64%;
+    min-width: 910px;
+
+}
+
+.actual{
+    display: inline-block;
+    background-color: whitesmoke;
+
+}
+.number_pag, .number_first, .text_paginator{
+    text-decoration: none;
+    font-family: 'Radio6',Arial, Helvetica, sans-serif;
+    display: inline-block;
+    
+    font-size: 1.4em;
+    padding: 5px 7px;
+    color: #8338ec;
+    
+}
+.number_pag:hover, .number_first:hover, .text_paginator:hover{
+    color: #000102;
+}
+
+.text_paginator{
+    border-bottom: 3px solid whitesmoke;
+}
+
+
+.number_first:nth-child(1){
+    border-bottom: 3px solid #8338ec;
+}
+.number_pag:nth-child(2){
+    border-bottom: 3px solid #8338ec;
+}
+
+.bg_paginator{
+    border-radius: 4px;
+    padding: 0px 4px;
+    margin: 0 auto;
+    background-color: whitesmoke; 
+    width: fit-content;
+
+}

@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse,redirect,get_object_or_404
 from questweb.forms import FormArticle
 from questapp.models import Article,Category
 from django.contrib import messages
+from django.core.paginator import Paginator #importando paginator
 
 # Create your views here.
 
@@ -16,9 +17,14 @@ def about_us(request):
 
 def products(request):
     articulos = Article.objects.filter(status = True).order_by('-created_at')
-    #posible forma ,crear una var que recorra todas las categorias,pasarla como variable al render, y en el html recorrerla para que muestre todas las categorias en forma de link para filtrar en otra view
+    paginator = Paginator(articulos, 1)
+
+    #recoger numero pagina
+    page = request.GET.get('page')
+    page_articles = paginator.get_page(page)
+
     return render(request, 'products.html',{
-        'articulos': articulos
+        'articulos': page_articles
     })
 
 def products_detailed(request, slug):
@@ -72,7 +78,12 @@ def categories(request, category_name):
     category = get_object_or_404(Category ,name=category_name)
     articulo = Article.objects.filter(categories = category)
 
+    paginator = Paginator(articulo, 1)
+
+    page = request.GET.get('page')
+    page_articles = paginator.get_page(page)
+
     return render(request, 'categories.html',{
         'category':category,
-        'articulos':articulo
+        'articulos':page_articles
     })

@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{% static './css/products/basicos.css' %}">
     <link rel="stylesheet" href="{% static './css/products/tarjetas.css' %}">
     <link rel="stylesheet" href="{% static './css/products/grilla.css' %}">
+    <link type="text/css" href="{% static './css/paginator.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ec71379c2.js" crossorigin="anonymous"></script>
     {% endblock styles %}
 
 
@@ -36,7 +38,7 @@
     {% include 'expositor-productos.html' %}
    
 </div>
-
+{% include 'paginator/paginator.html' %}
 
 {% endblock content %}
 

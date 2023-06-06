@@ -5,9 +5,9 @@
     <a class="link-products" href="{% url 'products_detailed' articulo.slug %}">
         <div class="producto">
             {% if articulo.image_product.url|length >= 1 and  articulo.image_product != 'null' %}
-                <img src="{{articulo.image_product.url}}" alt="{{articulo.name_products}}">
+                <img loading="lazy" src="{{articulo.image_product.url}}" alt="{{articulo.name_products}}">
             {% else %}
-                <img src="{% static './images/auriculares.png' %}" alt="{{articulo.name_products}}">
+                <img loading="lazy" src="{% static './images/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available.jpg' %}" alt="{{articulo.name_products}}">
             {% endif %}
 
             <div class="informacion">
