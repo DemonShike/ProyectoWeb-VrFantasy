@@ -48,7 +48,7 @@
     font-family: sans-serif;
     background-color: #232629;
     width: 64%;
-    max-height: 600px;
+   
     border-radius: 4px 4px  0 0;
     min-width: 910px;
 }
@@ -56,5 +56,58 @@
 .containercenter{
     display: flex;
     flex-wrap: wrap;
+    margin: 0 20px;/*probalbmenet sea mejor usar jutify-content y dejar el margin en auto*/
+
+}
+
+.search-bar{
     margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+}
+
+.search-bar input{
+    background:transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 6px 20px;
+    font-size: 20px;
+    color: #232629;
+}
+
+.search-bar input::placeholder{
+    color: #232629;
+}
+.search-bar button {
+
+    background: transparent;
+    outline: none;
+    border: none;
+    border: 1px solid #232629;
+    background-color: #232629;
+    border-radius: 50%;
+    cursor: pointer;
+   
+}
+
+.search-bar button .icon{
+    color: whitesmoke;
+    height: 35px;
+    font-size: 30px;
+}
+
+.meesage-find{
+    font-size: 4em;
+    color: whitesmoke;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    font-family: 'Radio2',Arial, Helvetica, sans-serif;
+    
 }

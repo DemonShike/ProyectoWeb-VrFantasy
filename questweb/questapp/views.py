@@ -3,6 +3,9 @@ from questweb.forms import FormArticle
 from questapp.models import Article,Category
 from django.contrib import messages
 from django.core.paginator import Paginator #importando paginator
+from django.contrib.auth.forms import UserCreationForm # importing the object 
+from questweb.forms import RegisterForm #importando el modelo definitivo para el registro
+from django.contrib.auth import authenticate, login, logout #metodos para login
 
 # Create your views here.
 
@@ -16,12 +19,22 @@ def about_us(request):
 
 
 def products(request):
-    articulos = Article.objects.filter(status = True).order_by('-created_at')
-    paginator = Paginator(articulos, 1)
+    #recoger busqueda
+    search = request.GET.get('search')
+    if search:
+        articulos = Article.objects.filter(name_products__contains = search,status = True).order_by('-created_at')
+    else:
+        articulos = Article.objects.filter(status = True).order_by('-created_at')
+
+        
+    paginator = Paginator(articulos, 8)
 
     #recoger numero pagina
     page = request.GET.get('page')
     page_articles = paginator.get_page(page)
+
+
+
 
     return render(request, 'products.html',{
         'articulos': page_articles
@@ -76,7 +89,12 @@ def form(request): #Recibe los datos enviados de /formulario/
 def categories(request, category_name):
 
     category = get_object_or_404(Category ,name=category_name)
-    articulo = Article.objects.filter(categories = category)
+
+    search = request.GET.get('search')
+    if search:
+        articulo = Article.objects.filter(categories = category, name_products__contains = search)
+    else:
+        articulo = Article.objects.filter(categories = category)
 
     paginator = Paginator(articulo, 1)
 
@@ -86,4 +104,47 @@ def categories(request, category_name):
     return render(request, 'categories.html',{
         'category':category,
         'articulos':page_articles
+    })
+
+def register_page(request):
+
+    register_form = RegisterForm()
+
+    if request.method == 'POST':
+        register_form= RegisterForm(request.POST)
+
+        if register_form.is_valid():
+            register_form.save()
+
+            messages.success(request, 'Te has registrado correctamente')
+
+            return redirect('register')
+
+    return  render(request, 'register.html',{
+        'register_form' : register_form,
+        'title': 'Register | Vr Fantasy',
+        'title_form':'Register'
+    })
+
+def login_page(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.warning(request, 'Bienvenido')
+            return redirect('login')
+             
+        
+        else:
+            messages.warning(request, 'Han habido problemas al Logearte') #CAMBIAR ESTO PARA QUE NO SE ENVIE A LA INDEX
+
+    return render(request, 'login.html',{
+        'title_form':'Login'
+        
+        
     })

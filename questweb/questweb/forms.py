@@ -1,5 +1,7 @@
 from django import forms
 from django.core import validators
+from django.contrib.auth.forms import UserCreationForm #importando sistema de registro
+from django.contrib.auth.models import User # importando el modelo que usaremos para el registro
 
 class FormArticle(forms.Form):
     name_products = forms.CharField(
@@ -52,3 +54,12 @@ class FormArticle(forms.Form):
         choices= status_op,
         label= "¿Estado?"
     )
+
+class RegisterForm(UserCreationForm):
+
+    class Meta:
+        model = User #asignando el modelo en el que se va a basar
+        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2'] # campos que queremos mostrar (basados en el modelo que elegimos)
+
+
+

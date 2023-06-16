@@ -1,0 +1,56 @@
+{% extends 'login-register-layout.html' %}
+{% load static %}
+{% block styles %}
+{{ block.super }}
+
+<link type="text/css" href="{% static 'css/register-margin.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+{% block content_form %}
+
+
+    <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        
+        {{register_form.username}}
+        <label>{{register_form.username.label}}</label>
+    </div>
+    <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+
+            {{register_form.email}}
+        <label>{{register_form.email.label}}</label>
+    </div>
+   
+    <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        
+        {{register_form.first_name}}
+        <label>{{register_form.first_name.label}}</label>
+    </div>
+    <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        
+        {{register_form.last_name}}
+        <label>{{register_form.last_name.label}}</label>
+    </div>
+
+
+    <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        
+        {{register_form.password1}}
+        <label>{{register_form.password1.label}}</label>
+    </div>
+    <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        
+        {{register_form.password2}}
+        <label>{{register_form.password2.label}}</label>
+    </div>
+
+    <button type="submit" class="btn">Register</button>
+    <div class="login-register">
+        <p>You have an account?<a href="{% url 'login' %}" class="register-link">Login</a></p>
+    </div>
+{% endblock content_form %}

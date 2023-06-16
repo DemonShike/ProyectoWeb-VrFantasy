@@ -1,0 +1,16 @@
+<div class="form-container">
+    <form action="" method="GET" class="search-bar">
+        {% csrf_token %}
+
+        <input type="text" class="search-input" placeholder="Search" name="search">
+
+        <button type="submit"><ion-icon class="icon" name="search"></ion-icon></button>
+    </form>
+</div>
+
+{% block script %}
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+{% endblock script %}

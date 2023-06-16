@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>navegation var</title>
+    <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="{% static 'css/layout.css' %}" rel="stylesheet">
     {% block styles %}
@@ -29,7 +29,7 @@
                         <li class="itemNav about"><a href="{% url 'about_us' %}">About us</a></li>
                         <li class="itemNav products"><a href="{% url 'products' %}">Products</a></li>
                         <li class="itemNav products">
-                            <a href="{% url 'form' %}">Categories</a>
+                            <a href="" class="categories-link">Categories</a>
                             <ul class="list-categories">
                                 {% for category in categories %}
                                 <li><a href="{% url 'categories' category.1 %}">{{category.1}}</a></li>
@@ -37,6 +37,10 @@
                             </ul>
                         </li>
                         <li class="itemNav products"><a href="{% url 'form' %}">Formulario</a></li>
+                    </ul>
+                    <ul class="boxItems">
+                        <li class="itemNav home"><a href="{% url 'register' %}">Register</a></li>
+                        <li class="itemNav home"><a href="{% url 'login' %}">Login</a></li>
                     </ul>
                 </div>
             </nav>

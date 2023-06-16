@@ -24,16 +24,11 @@
 {% endif %}
 
 <h2 class="titleProducts">Products</h2>
+{% include 'search.html' %}
 <div class="contentProducts">
 
-    {% comment "creo que era una prueba" %}
     
-        {% for category in categories %} <!--Recibiendo categorias del Cprocessor-->
-        <h2>{{category.1}}</h2>
-        {% endfor %}
-        
-        
-    {% endcomment %}
+
     {% include 'expositor-productos.html' %}
     
    

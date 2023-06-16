@@ -1,38 +1,46 @@
 {% load static %}
 
 <div class="containercenter">
-    {% for articulo in articulos %}
-    <a class="link-products" href="{% url 'products_detailed' articulo.slug %}">
-        <div class="producto">
-            {% if articulo.image_product.url|length >= 1 and  articulo.image_product != 'null' %}
-                <img loading="lazy" src="{{articulo.image_product.url}}" alt="{{articulo.name_products}}">
-            {% else %}
-                <img loading="lazy" src="{% static './images/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available.jpg' %}" alt="{{articulo.name_products}}">
-            {% endif %}
+    {% if not articulos  %}
+        <h2 class="meesage-find">Sorry we can't find it</h2>
+    {% else %}
+        {% for articulo in articulos %}
+    
 
-            <div class="informacion">
-                <span class="tipo-envio">
-                    {% if articulo.shipping_type %}
-                        Envio Disponible
-                    {% else %}
-                        Envio No Disponible
-                    {% endif %}</span>
-                <span class="precio">$ {{articulo.product_price}}</span>
-                <span class="precio-envio">
-                    {% if articulo.shipping_price %}
-                        Envio Gratis
-                    {% else %}
-                        Envio con Costo
-                    {% endif %}
-                </span>
-                <span class="descripcion">{{articulo.name_products}}</span>
-                <div class="calificacion">
-                    <span><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i></span>
-                    <span>1919</span>
+        
+        <a class="link-products" href="{% url 'products_detailed' articulo.slug %}">
+            <div class="producto">
+                {% if articulo.image_product.url|length >= 1 and  articulo.image_product != 'null' %}
+                    <img loading="lazy" src="{{articulo.image_product.url}}" alt="{{articulo.name_products}}">
+                {% else %}
+                    <img loading="lazy" src="{% static './images/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available.jpg' %}" alt="{{articulo.name_products}}">
+                {% endif %}
+
+                <div class="informacion">
+                    <span class="tipo-envio">
+                        {% if articulo.shipping_type %}
+                            Envio Disponible
+                        {% else %}
+                            Envio No Disponible
+                        {% endif %}</span>
+                    <span class="precio">$ {{articulo.product_price}}</span>
+                    <span class="precio-envio">
+                        {% if articulo.shipping_price %}
+                            Envio Gratis
+                        {% else %}
+                            Envio con Costo
+                        {% endif %}
+                    </span>
+                    <span class="descripcion">{{articulo.name_products}}</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">{{articulo.product_city}}</span>
                 </div>
-                <span class="ubicacion">{{articulo.product_city}}</span>
             </div>
-        </div>
-    </a>
-    {% endfor %}
+        </a>
+    
+        {% endfor %}
+    {% endif %}
 </div>
