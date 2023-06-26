@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about_me.css' %}"/>
+{% endblock styles %}
+{% block content %}
+
+<section class="about-me">
+    <div class="flex-container">
+        <div class="about-container">
+            <div>
+                <h2>About Me</h2>
+                <p>Username: {{user.username}}</p>
+                <p>Emal Adress: {{user.email}}</p>
+                <p>First Name: {{user.first_name}}</p>
+                <p>Last Name: {{user.last_name}}</p>
+            </div>
+        </div>
+        <div class="car-container">
+            <div>
+                <h2>Cart</h2>
+                <p>You have {{ cart.sexocart.count }} articles on car</p>
+                <a href="{% url 'view_cart' %}">View</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

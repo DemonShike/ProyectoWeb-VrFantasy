@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<div class="cart-center">
+     
+    <div class="cart-container">
+        <h2 class="title-car">Your Articles</h2>
+        {% for item in cart.sexocart.all %} 
+            <div class="cart-article">
+                <div class="img-container">
+                    {% if item.article.image_product != 'null' and  item.article.image_product.url|length >= 1 %}
+                        <img load="lazy" alt="{{item.article.name_products}}" src="{{item.article.image_product.url}}">
+                    {% else %}
+                        <img load="lazy" alt="notavailable" src="{% static './../media/image_products/not-available.jpg' %}">
+                    {% endif %}
+                </div>
+                <div class="title-container">
+                    <p>{{ item.article.name_products }}</p>
+                </div>
+                <div class="price-container">
+                    <div class="price-container-price">
+                        <p>Price: {{ item.article.product_price }}</p>
+                        <p>Total:{{item.total_price}}</p>
+                    </div>
+                    <div class="price-container-price-void">  
+
+                    </div>
+                    <div class="price-container-quantity">
+                        <p><a href="{% url 'remove_one' item.article.id  %}" oncontextmenu="return false" onmousedown="return false" onselectstart="return false;"><ion-icon name="remove-outline" class="minus"></ion-icon></a> </p>
+                        <p>  {{item.quantity}}</p>
+                        <p ><a class="custom-link" href="{% url 'add_to_cart' item.article.id %}" oncontextmenu="return false" onmousedown="return false" onselectstart="return false;"><ion-icon name="add-outline" class="minus"></ion-icon></a> </p>
+                        <p><a href="{% url 'cart_delete' item.id  %}" oncontextmenu="return false" onmousedown="return false" onselectstart="return false;"><ion-icon name="trash-outline" class="trash"></ion-icon></a> </p>     
+                    </div>
+                </div>
+            </div>
+            
+        {% endfor %}
+        
+    </div>
+    <div class="total-container">
+        <p>Subtotal paying with Transfer or Debit: {{cart.final_total_price}}</p>
+        <button class="btn-buy"><a href="{% if user.email %}
+            {% url 'endpage' %}
+            {% else %}
+            {% url 'login' %}
+
+        {% endif %}
+        
+        ">Buy</a><span class="material-symbols-outlined">
+        
+        </span>
+    </button>
+    </div>
+</div>    
+{% endblock content %}

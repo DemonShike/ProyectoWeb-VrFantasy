@@ -9,15 +9,6 @@
 {% block content %}
 
 
-
-
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-succes">
-            {{message}}
-        </div>
-    {% endfor %}
-{% endif %}
 <div class="wrapper">
     <div class="form-box login">
         <h2>{{title_form}}</h2>
@@ -31,6 +22,16 @@
                     </div>
                 {% endfor %}
             {% endfor %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                        <div class="error_message">
+                            {{message}}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
         </div>
         {% csrf_token %}
         {% block content_form %}

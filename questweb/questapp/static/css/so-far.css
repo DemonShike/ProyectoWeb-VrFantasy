@@ -1,0 +1,15 @@
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+section div{
+    font-size: 3em;
+    background-color: #252529;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 6px;
+    padding: 2em;
+}

@@ -1,0 +1,133 @@
+.hero{
+    background-image: none;
+}
+
+.container-about_us{
+    text-align: center;
+    background-color: #8e5e30;
+    padding-bottom: 70px;
+
+}
+
+.container-about_us h2{
+    padding-top: 30px;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    
+}
+
+.container-about_us .img-container{
+    border: 1px solid #8e5e30;
+    border-radius: 3000px;
+    width: 800px;
+    overflow: hidden;
+    margin: auto;
+    
+}
+.img-container img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+.text-container{
+    max-width: 700px;
+    margin:0 auto;
+    margin-bottom: 50px;
+  
+}
+.text-container p:nth-child(1),
+.text-container h2{
+    font-size: 1.9em;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+
+}
+
+.text-container p{
+    font-family: 'Radio1',Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.2em;
+}
+
+.content-flex{
+    display: flex;
+    justify-content: space-evenly;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../images/image-about.png');
+    margin-bottom: 70px;
+}
+.number-text h2{
+    font-size: 3em;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+}
+.number-text p{
+    font-family: 'Radio6',Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 0px;
+    
+}
+
+.number-text:nth-child(1) h2{
+    color: #085eff;
+}
+.number-text:nth-child(2) h2{
+    color: #ff0fa2;
+}
+.number-text:nth-child(3) h2{
+    color: #ff953f;
+}
+
+.text-container details summary{
+    list-style: none;
+    cursor: pointer;
+}
+
+.list-our[open] .hydrated{
+    transition: all 0.6s ease;
+    rotate: 90deg;
+
+    }
+
+.list-our p{
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+
+.list-our[open].reflow p{
+    padding-left: 20px;
+    max-height: 100px;
+    transition: all 0.6s ease;
+    margin-bottom: 20px;
+
+}
+
+.list-our summary h3::first-letter{
+    color: grey;
+}
+
+.list-our summary h3{
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.3em;
+}
+
+.flex-values{
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-pack: justify;/*Similar a justify content*/
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-values .hydrated{
+    
+    font-size: 1.7em;
+}
+
+
+

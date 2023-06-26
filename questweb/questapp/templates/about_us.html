@@ -1,1 +1,77 @@
 {% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about_us.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+<section>
+    <div class="container-about_us">
+        <h2>About Us</h2>
+        <div class="img-container">
+            <img src="{% static 'images/Will-VR-Go-IMAGE.jpeg' %}">
+        </div>
+    </div>
+</section>
+<section>
+    <div class="text-container">
+        <p>Welcome to VR Fantasy</p>
+        <p>At VR Fantasy, we specialize in selling virtual reality equipment and related accessories. We are passionate about technology and virtual immersion, and we aim to provide you with the ultimate experience in the world of virtual reality.</p>
+        <p>Our primary focus is on offering you the best virtual reality devices in the market. We work with leading brands such as Oculus, HTC, Valve, and more to bring you a wide and diverse selection of products. From the popular Oculus Quest and Quest 2 to the powerful HTC Vive and the impressive Valve Index, you will find everything you need to dive into amazing virtual worlds.</p>
+        <p>In addition to virtual reality devices, we also offer a variety of accessories and add-ons to enhance your experience. From comfortable headphones specifically designed for virtual reality to storage stands for your devices, we are committed to providing you with everything you need to optimize your setup and ensure an unforgettable gaming experience.</p>
+        <p>At VR Fantasy, we take pride in delivering exceptional service to our customers. Our team of experts is available to assist you and answer any questions you may have about the products we offer. We are dedicated to providing personalized attention and ensuring that you find the perfect equipment for your needs.</p>
+        <p>Explore our online catalog and discover the incredible range of virtual reality devices and accessories we have to offer. Immerse yourself in a world of possibilities and live the fantasy of virtual reality with VR Fantasy!</p>
+    </div>
+</section>
+<section>
+    <div class="content-flex">
+        <div class="number-text">
+            <h2>40 </h2>
+            <p>teammates</p>
+        </div>
+        <div class="number-text">
+            <h2>15 </h2>
+            <p>countries</p>
+        </div>
+        <div class="number-text">
+            <h2>70,000+</h2>
+            <p>users</p>
+        </div>
+    </div>
+
+</section>
+<section>
+    <div class="text-container">
+        <h2>Our Values</h2>
+        <p>These values form the foundation of our business and guide everything we do at VRFantasy. We are committed to upholding these principles as we strive to provide an exceptional VR experience for all.</p>
+
+        <details class="list-our">
+            <summary><div class="flex-values"><h3>1 Customer Satisfaction </h3><ion-icon name="chevron-forward-outline"></ion-icon></div></summary>
+            <p>We prioritize the happiness and satisfaction of our customers above all else. We go the extra mile to ensure that every interaction and experience with us exceeds expectations.</p>
+        </details>
+        
+        <details class="list-our">
+            <summary><div class="flex-values"><h3>2 Innovation</h3><ion-icon name="chevron-forward-outline"></ion-icon></div></summary>
+            <p>We embrace innovation and continuously strive to bring the latest advancements in virtual reality technology to our customers. We stay at the forefront of the industry, offering cutting-edge products that push the boundaries of what's possible.</p>
+        </details>
+        <details class="list-our">
+            <summary><div class="flex-values"><h3>3 Quality</h3><ion-icon name="chevron-forward-outline"></ion-icon></div></summary>
+            <p>We are committed to providing high-quality VR products that deliver exceptional performance and durability. We carefully select our products from trusted manufacturers to ensure that our customers receive the best-in-class experiences.
+            </p>
+        </details>
+        <details class="list-our">
+            <summary><div class="flex-values"><h3>4 Expertise</h3><ion-icon name="chevron-forward-outline"></ion-icon></div></summary>
+            <p>Our team consists of passionate VR enthusiasts who are knowledgeable and experienced in the field. We take pride in sharing our expertise with customers, offering guidance, recommendations, and support to help them make informed decisions.</p>
+        </details>
+        <details class="list-our">
+            <summary><div class="flex-values"><h3>5 Community</h3><ion-icon name="chevron-forward-outline"></ion-icon></div></summary>
+            <p>We believe in fostering a vibrant VR community. We actively engage with our customers, hosting events, sharing insights, and creating a space where enthusiasts can connect, share experiences, and inspire one another.</p>
+        </details>
+    </div>
+</section>
+{% endblock content %}
+
+{% block script %}
+<script defer src="{% static './scripts/about.js' %}"> </script>
+{% endblock script %}

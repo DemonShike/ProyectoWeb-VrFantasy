@@ -19,19 +19,19 @@
                 <div class="informacion">
                     <span class="tipo-envio">
                         {% if articulo.shipping_type %}
-                            Envio Disponible
+                            Shipping Available
                         {% else %}
-                            Envio No Disponible
+                            Shipping not Available
                         {% endif %}</span>
                     <span class="precio">$ {{articulo.product_price}}</span>
                     <span class="precio-envio">
                         {% if articulo.shipping_price %}
-                            Envio Gratis
+                            Shipping Free
                         {% else %}
-                            Envio con Costo
+                            Shipping With cost
                         {% endif %}
                     </span>
-                    <span class="descripcion">{{articulo.name_products}}</span>
+                    <span class="descripcion">{{articulo.name_products|truncatechars:30}}</span>
                     <div class="calificacion">
                         <span><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i><i class="fi-xnsuxl-star-solid"></i></span>
                         <span>1919</span>

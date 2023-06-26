@@ -1,0 +1,141 @@
+.cart-center{
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+.cart-container{
+    background-color: #232629;
+    border: 1px solid #232629;
+    max-width: 800px;
+    width: 80%;
+    color: whitesmoke;
+    padding: 20px 20px 40px 20px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.cart-article{
+    margin-top: 10px;
+    display: flex;
+    max-height: 110px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+
+.img-container{
+    height: 100px;
+    width: 100px;
+}
+
+.img-container img{
+    width: 95%;
+    height: 95%;
+    text-align: center;
+    display: block;
+    object-fit: cover;
+}
+
+.title-container{
+    width: 260px;
+}
+.title-car{
+    font-size: 1.8em;
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+}
+
+.cart-article{
+    font-family: 'Radio2',Arial, Helvetica, sans-serif;
+}
+
+.price-container-price p{
+    font-family: 'Radio4',Arial, Helvetica, sans-serif;
+}
+
+.title-container, .price-container, .price-container-quantity {
+
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.price-container-price-void{
+    width: 30px;
+}
+.price-container-price{
+    width: 150px;
+}
+
+.price-container, .price-container-quantity{
+    display: flex;
+    flex-direction: row;
+}
+
+.price-container-quantity a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.price-container-quantity  .minus,.trash{
+   
+   color: white;
+   border-bottom: 1px solid rgba(245, 245, 245, 0.582);
+   scale: 1.2;
+   margin: 5px;
+}
+
+.trash{
+    border: none;
+}
+
+.total-container{
+    background-color: whitesmoke;
+    max-width: 800px;
+    width: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: -20px;
+    
+}
+
+.total-container p{
+    text-align: center;
+}
+
+/*btn*/
+.btn-buy{
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Radio6',Arial, Helvetica, sans-serif;
+    background-color: #232629;
+    border: 1px solid #232629;
+    padding: 2px 4px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 1.4em;
+    width: 400px;
+    border-radius: 200px;
+}
+
+.btn-buy a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.btn-buy:hover{
+    background-color: #232629;
+    color: rgb(219, 219, 219);
+    cursor: pointer;
+}
+.total-container p{
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+}

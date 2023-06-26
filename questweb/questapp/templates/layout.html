@@ -17,31 +17,66 @@
 
 <body>
     <main class="{% block content_container %}hero {% endblock %}">
-        
+
+    <div class="little-message alert alert-succes">
+        <h4>If you are interested in learning more about the metaverse and virtual reality, we invite you to visit <a href="https://www.meta.com" alt="metalink">Meta</a></h4>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+            <div class="little-message alert alert-succes login">
+                <h4>
+                    {{message}}
+                </h4>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
         <header>
             <nav>
                 <div class="box-nav">
                     <div class="img-content">
-                        <img class="logo-Nav" alt="logo vrfantasy" src="{% static 'images/unknown.png' %}">
+                        <a href="{% url 'index' %}"><img class="logo-Nav" alt="logo vrfantasy" src="{% static 'images/unknown.png' %}"></a>
                     </div>
                     <ul class="boxItems">
                         <li class="itemNav home"><a href="{% url 'index' %}">Home</a></li>
                         <li class="itemNav about"><a href="{% url 'about_us' %}">About us</a></li>
                         <li class="itemNav products"><a href="{% url 'products' %}">Products</a></li>
                         <li class="itemNav products">
-                            <a href="" class="categories-link">Categories</a>
+                            <a href="{% url 'products' %}" class="categories-link">Categories</a>
                             <ul class="list-categories">
                                 {% for category in categories %}
                                 <li><a href="{% url 'categories' category.1 %}">{{category.1}}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
-                        <li class="itemNav products"><a href="{% url 'form' %}">Formulario</a></li>
+                        {% if user.is_staff %}<!--Comprobamos si el usuarios es de staff para mostarle esa funcion-->
+                            <li class="itemNav products"><a href="{% url 'form' %}">Formulario</a></li> 
+                        {% endif %}
+                        <li class="itemNav products"><a href="{% url 'other' %}">Other</a></li>
                     </ul>
-                    <ul class="boxItems">
-                        <li class="itemNav home"><a href="{% url 'register' %}">Register</a></li>
-                        <li class="itemNav home"><a href="{% url 'login' %}">Login</a></li>
-                    </ul>
+                    {% if not user.email %}<!--Comprobamos si inicio sesion para no mostrar esto-->
+                    
+                    
+                        <ul class="boxItems">
+                            <li class="itemNav home"><a href="{% url 'register' %}">Register</a></li>
+                            <li class="itemNav home"><a href="{% url 'login' %}">Login</a></li>
+                        </ul>
+                    {% endif %}
+
+                    {% if user.email %} <!--User y otras opciones -->
+                        <ul class="boxItems">
+                            <ion-icon name="person"      class="user-icon"></ion-icon>
+                            <li class="itemNav products user "><a categories-link href="{% url 'register' %}">{{user.username|truncatechars:20}}</a>
+                                <ul class="list-categories">
+                                    <li><a href="{% url 'about_me' %}">Sobre Mi</a></li>
+                                    <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+                                </ul>
+                            </li>
+                            <li class="itemNav products user"><a categories-link href="{% url 'view_cart' %}"><ion-icon name="cart-outline" class="cart-icon"></ion-icon></a></li>
+                        <ul>
+                    {% endif %}
                 </div>
             </nav>
         </header>
@@ -60,6 +95,12 @@
 <script type="text/javascript" defer src="{% static './scripts/barra.js' %}" >
 
 </script>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 {% block script %}
 
 {% endblock  %}

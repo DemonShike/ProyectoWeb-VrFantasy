@@ -53,48 +53,57 @@
         <div class="white-color-two">
             <div class="text-box">
                 <h4 class="tag-products"><a href="{%url 'index' %}">Home > </a> <a href="{%url 'products' %}">Products ></a>  <a href="#">{{articulos.name_products}}</a></h4>
-                    <span class="span-categories">Etiquetas del Producto: </span>
+                    <span class="span-categories">Tags: </span>
                 {% for articulo in  articulos.categories.all%} <!--for categories-->
                     <a href="{% url 'categories' articulo.name %}" class="categories">{{articulo}}</a>
                 {% endfor %}
                 
                 <h2 class="title-product">{{articulos.name_products}}</h2>
-                <h3 class="price">Precio: US${{articulos.product_price}}</h3>
+                <h3 class="price">Price: US${{articulos.product_price}}</h3>
                 <div class="box one">
                     <span>{% if articulos.shipping_price %}
-                            Envio con Costo
+                             Shipping With cost
                             {% else %}
-                            Envio Gratis
+                            Shipping Free
                         {% endif %}
                         </span>
                     <span>{% if articulos.shipping_price %}
-                        Envio No Disponible
+                        Shipping Not Available
                         {% else %}
-                        Envio Disponible
+                        Shipping Available
                     {% endif %}</span>
                     <span>{{articulos.product_city}}</span>
                 </div>
                 <div class="box two">
-                    <span>Id Producto: {{articulos.id}}</span>
+                    <span>Product Id: {{articulos.id}}</span>
                     <span>Stock: True False</span> <!--AGREGAR CUANDO AGREGE IMAGEN-->
 
                 </div>
                 <div class="box-cards">
-                <span class="cards-text">Tarjetas Aceptadas:</span>
+                <span class="cards-text">Accepted Cards:</span>
                 <img src="{% static 'images/tarjeas_sin.jpg' %}">
                 </div>
-                <button class="btn-buy">Comprar<span class="material-symbols-outlined">
+                <a class="none-style" href="{% if user.email %}
+                        {% url 'so-far' %}
+                        {% else %}
+                        {% url 'login' %}
+
+                    {% endif %}
+                    
+                    "><button class="btn-buy">Buy<span class="material-symbols-outlined">
                     add_shopping_cart
-                    </span></button>
+                    </span>
+                </button></a>
+                <a class="none-style" href="{% url 'add_to_cart' articulos.id %}"><button  class="btn-buy"> Add to Cart</button></a>
             </div>
         </div>
         <div class="text-box-two">
-            <h2>Descripcion</h2>
+            <h2>Description</h2>
             
             <div class="text-ckeditor">
                 {{articulos.description_products|safe}}
             </div>
-
+ 
         </div>
 </div>
 </div>

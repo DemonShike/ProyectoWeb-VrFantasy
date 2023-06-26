@@ -1,0 +1,41 @@
+.hero{
+    background-image: none;
+    background-color: #232629;
+    color: white;
+    line-height: 1.2;
+}
+
+.section-other{
+    padding-top: 100px;
+
+}
+
+
+.text-other{
+
+    width: 700px;
+    margin: 0 auto;
+    border-bottom:1px solid rgb(125, 125, 125);
+    margin-bottom: 150px;
+}
+
+.text-other a{
+    text-decoration: none;
+    color: white;
+}
+
+.text-other h2{
+    text-align: center;
+    font-family: 'Radio',Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 2em;
+}
+.text-other h4{
+    font-family: 'Radio',Arial, Helvetica, sans-serif;    
+    font-size: 1.2em;
+}
+.text-other p, .text-other ol li{
+    padding-bottom: 12px;
+    font-family: 'Radio3',Arial, Helvetica, sans-serif;
+
+}

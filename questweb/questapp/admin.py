@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Category
+from .models import Article, Category, Cart, CartItem
 
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    readonly_fields = ('created_at','user','updated_at')
+    readonly_fields = ('created_at','user','updated_at', 'pk')
     search_fields = ('name_products','description_products',)
     list_filter = ('product_city','status','categories','user__username')
     list_display = ('name_products','status','created_at')
@@ -25,7 +25,8 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category, CategoryAdmin)
-
+admin.site.register(Cart)
+admin.site.register(CartItem)
 
 #Names AdminPanel
 admin.site.site_header = "Vr Fantasy Administration"

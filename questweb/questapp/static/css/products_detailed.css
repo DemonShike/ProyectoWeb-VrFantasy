@@ -206,6 +206,11 @@
     margin-bottom: 20px;
 }
 
+.btn-buy a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
 .btn-buy:hover{
     background-color: #296dd4;
     color: rgb(219, 219, 219);
@@ -281,3 +286,8 @@ top: 5px;
     transition: all 300ms;
 }
 
+.none-style{
+    text-decoration: none;
+    color: white;
+    
+}

@@ -8,13 +8,10 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-   
-    border: 1px solid white;
-    border-radius: 2px;
+    border: 1px solid #e74abd;
     align-items: end;
-    border-radius: 2px;
+    border-radius: 6px;
     width: 60%;
-    
     padding: 95px;
     margin: 0 auto;
     margin-top: 180px;
@@ -25,15 +22,27 @@
     text-transform: capitalize;
     color: white;
     margin: 0;
-    text-shadow: #d177d5 4px 3px;
+    text-shadow: #c935a2 4px 3px;
     font-family: 'Radio6',sans-serif,Arial, Helvetica, sans-serif;
     font-size: 7vw; /*9em anterior*/
     display: block;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+
     
 }
 
 
-
+.buttonHero a{
+    text-decoration: none;
+    color: #e82c7a;
+}
+.buttonHero:hover a{
+    color: white;
+}
 .buttonHero{
     margin-top: 10px;
     background-color: #fff;
@@ -183,11 +192,12 @@
 .containerVr{
 
     margin: 20px;
-    
+    width: 420px;
     text-align: center;
     border-radius: 15px;
     padding: 50px 25px;
     box-sizing: border-box;
+    height: 500px;
 
 
 }
@@ -224,7 +234,7 @@
 }
 
 .containerVr:nth-child(1){
-    background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/41uxvP4KUZL._SL1000_.jpg);
+    background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/71URNvzoWqL._SL1500_.jpg);
 
 }
 
@@ -234,7 +244,13 @@
     background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/oculus-quest-2-mieten-get-it-easy.webp);
 
 }
+.containerVr:nth-child(2) p{
+    margin-bottom: 120px;
+}
 
+.containerVr:nth-child(3) p{
+    margin-bottom: 120px;
+}
 .containerVr:nth-child(3){
     background-image: linear-gradient(0deg,var(--primary),var(--primary)),url(../images/6388754_rd.jpg);
 
@@ -243,6 +259,9 @@
     
     --primary:rgba(0,0,0,0.7);
     transition: --primary 900ms;
+}
+.button--black a{
+color: black;
 }
 
 .button--black{
